@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free vs Pro — Cutaway</title>
+<meta name="description" content="What's free in Cutaway, what's Pro, and the honest reasoning behind where that line sits.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="index.html">
+    <span class="wordmark-mark">◧</span> Cutaway
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="workflow.html">The Workflow</a>
+    <a href="beginners.html">For Beginners</a>
+    <a href="series.html">Series</a>
+    <a href="updates.html">Updates</a>
+    <a href="pricing.html" aria-current="page">Free vs Pro</a>
+    <a class="nav-cta" href="index.html#follow">Follow the build →</a>
+  </nav>
+</header>
+
+<section class="hero hero-compact">
+  <p class="hero-eyebrow">Free vs Pro</p>
+  <h1>The line is simple: who's making the decision.</h1>
+  <p class="lede">
+    If you're doing the editing yourself, it's free. If the AI is doing it for you,
+    that's Pro. Here's exactly where that line sits, and why.
+  </p>
+</section>
+
+<section class="section">
+  <div class="tier-grid">
+    <div class="tier-card">
+      <p class="section-label">Free, always</p>
+      <h2>Manual editing</h2>
+      <ul class="tier-list">
+        <li>Trim, split, and cut — with full undo</li>
+        <li>Text and captions, including non-Latin scripts</li>
+        <li>VidBash — mix clips from multiple videos</li>
+        <li>Color filters (Vibrant, B&amp;W, Warm, Cool)</li>
+        <li>Aspect ratio reframing and true 4K export</li>
+        <li>Random sampler</li>
+        <li>Project save and load</li>
+      </ul>
+      <p class="tier-note">
+        Everything here is you making the decisions. Cutaway just gets out of your way.
+      </p>
+    </div>
+
+    <div class="tier-card tier-card-pro">
+      <p class="section-label">Pro</p>
+      <h2>AI does the editing</h2>
+      <ul class="tier-list">
+        <li>Cut dead air — automatically finds and removes it</li>
+        <li>Highlight reel — automatically finds your best moments</li>
+        <li>Templates — one-click styles built on that same AI scoring</li>
+      </ul>
+      <p class="tier-note">
+        Everything here is Cutaway making a real judgment call about your specific
+        footage — not a fixed preset, an actual decision.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="filmstrip" aria-hidden="true" id="filmstrip-1"></div>
+
+<section class="section">
+  <p class="section-label">Why isn't all of it free?</p>
+  <h2>The honest answer</h2>
+  <p>
+    The manual tools — trim, text, mixing, filters — are things basically any video
+    editor can do, free, forever. That's the generous baseline, and it's not going away.
+  </p>
+  <p>
+    The AI side is different. Getting a computer to actually look at raw footage and
+    correctly judge "this part is dead air" or "this moment is worth keeping" is
+    genuinely hard, ongoing work — not a one-time feature you build and forget. It's
+    the part that's taken the most iteration, the most debugging, the most real
+    engineering effort of anything in this whole project.
+  </p>
+  <p>
+    If that part were free too, there'd be no way to keep actually building it —
+    no time to keep improving the scoring, fixing edge cases, or adding the next AI
+    feature. <strong>The Pro tier isn't a paywall on the app. It's what makes it
+    possible for the app to keep getting better instead of being a personal project
+    that quietly stops one day.</strong>
+  </p>
+  <p>
+    So the free tier isn't a stripped-down demo — it's a genuinely complete manual
+    editor on its own. Pro is there for the part that actually costs something to keep
+    building: the AI figuring it out for you.
+  </p>
+</section>
+
+<section class="footer-cta" id="follow">
+  <h2>No launch date. No deadline.</h2>
+  <p>Just seeing how far I can take this — built in public, one part at a time.</p>
+  <a class="btn btn-primary" href="https://www.instagram.com/its.maiava/" target="_blank" rel="noopener">Follow along →</a>
+</section>
+
+<footer class="site-footer">
+  ◧ Cutaway — a personal project.
+</footer>
+
+<script>
+  document.querySelectorAll('.filmstrip').forEach((strip) => {
+    for (let i = 0; i < 14; i++) {
+      const frame = document.createElement('div');
+      frame.className = 'filmstrip-frame';
+      frame.style.setProperty('--frame-opacity', (0.05 + Math.random() * 0.16).toFixed(2));
+      strip.appendChild(frame);
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -19,6 +19,7 @@
     <a href="beginners.html">For Beginners</a>
     <a href="series.html">Series</a>
     <a href="updates.html" aria-current="page">Updates</a>
+    <a href="pricing.html">Free vs Pro</a>
     <a class="nav-cta" href="index.html#follow">Follow the build →</a>
   </nav>
 </header>
@@ -33,7 +34,68 @@
 </section>
 
 <section class="section">
+  <p class="section-label">What's coming next</p>
+  <h2>Being explored right now — no promises on order or timing.</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>Redundancy filtering</h3>
+      <p>Highlight reel avoiding near-duplicate moments instead of picking several similar clips.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Smart vertical reframing</h3>
+      <p>A crop that actually follows the subject, instead of a fixed center crop.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Scenario-description AI assembly</h3>
+      <p>Describe the edit you want in plain language, and have it built for you.</p>
+    </div>
+    <div class="feature-card">
+      <h3>VidBash timeline</h3>
+      <p>A visual, draggable timeline for VidBash instead of the current list-based sequence.</p>
+    </div>
+  </div>
+</section>
+
+<div class="filmstrip" aria-hidden="true" id="filmstrip-0"></div>
+
+<section class="section">
   <div class="changelog">
+
+    <div class="changelog-entry">
+      <span class="changelog-tag site">Site</span>
+      <h3>Added the Free vs Pro page</h3>
+      <p>A clear breakdown of what's free, what's Pro, and the reasoning behind where that line sits.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Color filters</h3>
+      <p>Four presets — Vibrant, B&amp;W, Warm, and Cool — tested directly against real footage before shipping. Available in both the main editor and VidBash.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag site">Site</span>
+      <h3>Clarified the free vs Pro boundary</h3>
+      <p>Settled the actual rule: if the AI is making the editing decision (dead air removal, highlight scoring, templates), that's Pro. If you're doing it yourself — trim, text, VidBash, filters, export options — it's free, always. Moved Templates under Pro Features and 4K export back to free to match.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>VidBash: text overlays</h3>
+      <p>Add text across the whole mix, with position presets and precise timing — reusing the same export pipeline that already handled text in the main editor.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag fix">Fix</span>
+      <h3>Fixed overlapping text overlays getting stuck</h3>
+      <p>When two text overlays overlapped — either on the timeline or directly on the video preview — selecting one didn't actually let you drag it, since it never got brought to the front. Fixed on both the timeline and the canvas.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag fix">Fix</span>
+      <h3>VidBash modal redesigned as collapsible tabs</h3>
+      <p>Media pool, sequence, and text overlays are now separate collapsible sections instead of one long scrolling page — stays manageable no matter how much is in the mix.</p>
+    </div>
 
     <div class="changelog-entry">
       <span class="changelog-tag site">Site</span>
@@ -113,6 +175,17 @@
 <footer class="site-footer">
   ◧ Cutaway — a personal project.
 </footer>
+
+<script>
+  document.querySelectorAll('.filmstrip').forEach((strip) => {
+    for (let i = 0; i < 14; i++) {
+      const frame = document.createElement('div');
+      frame.className = 'filmstrip-frame';
+      frame.style.setProperty('--frame-opacity', (0.05 + Math.random() * 0.16).toFixed(2));
+      strip.appendChild(frame);
+    }
+  });
+</script>
 
 </body>
 </html>

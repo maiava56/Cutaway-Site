@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Updates — Cutaway</title>
+<meta name="description" content="A running changelog of everything shipped on Cutaway, big and small.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="index.html">
+    <span class="wordmark-mark">◧</span> Cutaway
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="workflow.html">The Workflow</a>
+    <a href="beginners.html">For Beginners</a>
+    <a href="series.html">Series</a>
+    <a href="updates.html" aria-current="page">Updates</a>
+    <a class="nav-cta" href="index.html#follow">Follow the build →</a>
+  </nav>
+</header>
+
+<section class="hero hero-compact">
+  <p class="hero-eyebrow">Changelog</p>
+  <h1>Everything shipped, big and small.</h1>
+  <p class="lede">
+    The main series covers the big features. This page is everything else — fixes,
+    polish, and smaller additions that don't need their own Part.
+  </p>
+</section>
+
+<section class="section">
+  <div class="changelog">
+
+    <div class="changelog-entry">
+      <span class="changelog-tag site">Site</span>
+      <h3>Added the Series and Updates pages</h3>
+      <p>Split the growing video collection into its own page so the homepage stays short as more Parts get posted. This page is the other half of that same cleanup.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag fix">Fix</span>
+      <h3>VidBash: fixed an audio glitch between mismatched source clips</h3>
+      <p>Mixing clips from two different source files could produce a glitch right at the transition when their audio formats didn't match. Rebuilt the join step to normalize audio before combining, and added a live preview player so trimming a piece is no longer done blind.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>VidBash — mix clips from multiple videos</h3>
+      <p>Import more than one source video, pull pieces from each into a single sequence, and export the mix — including different resolutions and frame rates from different sources, normalized automatically.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Real 4K upscale export</h3>
+      <p>What used to be a locked placeholder is now genuine orientation-aware 4K upscaling — vertical, square, or landscape.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Project save and load</h3>
+      <p>Trims, cuts, and text overlays now persist — close the app and pick up exactly where you left off instead of starting over.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Score transparency for Highlight Reel</h3>
+      <p>Every clip Highlight Reel picks now shows why — a plain-language reason plus a motion/audio breakdown, instead of an unexplained pick.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Trim, Split &amp; Cut redesign</h3>
+      <p>Rebuilt trim to be QuickTime-style and draggable, added a dedicated Split &amp; Cut mode with click-to-position and full undo, plus precise timecode entry for frame-accurate work. Fixed several real bugs along the way: the timeline going thin when text was added, cuts becoming invisible after exiting edit mode, and a handful of broken filmstrip thumbnails.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Text and captions</h3>
+      <p>Add your own text directly on the video — fonts, bold/italic, color, drag-to-position — including non-Latin scripts like Korean.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Templates and Random Sampler</h3>
+      <p>One-click editing styles (fast-paced, chill, or just cleaned up), plus a genuinely randomized sampler that pulls a different set of clips every time it runs.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Highlight Reel</h3>
+      <p>Automatic detection of the most interesting moments in raw footage, using motion and audio energy.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Cut dead air</h3>
+      <p>The first real feature — automatic detection and removal of silence and dead pauses.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="footer-cta" id="follow">
+  <h2>No launch date. No deadline.</h2>
+  <p>Just seeing how far I can take this — built in public, one part at a time.</p>
+  <a class="btn btn-primary" href="https://www.instagram.com/its.maiava/" target="_blank" rel="noopener">Follow along →</a>
+</section>
+
+<footer class="site-footer">
+  ◧ Cutaway — a personal project.
+</footer>
+
+</body>
+</html>

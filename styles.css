@@ -100,6 +100,10 @@ a {
   max-width: 900px;
 }
 
+.hero-compact {
+  padding: 5vw 6vw 3vw;
+}
+
 .hero-eyebrow {
   font-family: var(--font-mono);
   font-size: 13px;
@@ -258,6 +262,24 @@ a {
   }
 }
 
+/* ---- Reel embeds ---- */
+.reel-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+/* Instagram's embed widget sets its own internal sizing once embed.js
+   runs, but constraining the blockquote's max-width up front avoids
+   an oversized flash of unstyled content before the script loads. */
+.reel-grid > blockquote.instagram-media {
+  margin: 0 !important;
+  max-width: 328px !important;
+  min-width: 280px !important;
+  width: 100% !important;
+}
+
 /* ---- Content pages (workflow / beginners) ---- */
 .article {
   padding: 6vw 6vw 4vw;
@@ -316,3 +338,55 @@ a {
   color: var(--text-dim);
   font-size: 13px;
 }
+
+/* ---- Changelog ---- */
+.changelog {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 720px;
+}
+
+.changelog-entry {
+  padding: 20px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.changelog-entry h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 10px 0 8px;
+}
+
+.changelog-entry p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.changelog-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+.changelog-tag.feature {
+  background: rgba(232, 163, 61, 0.15);
+  color: var(--accent);
+}
+
+.changelog-tag.fix {
+  background: rgba(107, 168, 216, 0.15);
+  color: #6ba8d8;
+}
+
+.changelog-tag.site {
+  background: rgba(154, 154, 165, 0.15);
+  color: var(--text-dim);
+}
+

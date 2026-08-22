@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Turn 30-60 Minutes of Raw Footage Into Short Clips — Cutaway</title>
+<meta name="description" content="A practical breakdown of what actually needs to happen to turn long raw footage into short, postable clips — and how Cutaway automates it.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="index.html">
+    <span class="wordmark-mark">◧</span> Cutaway
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="workflow.html" aria-current="page">The Workflow</a>
+    <a href="beginners.html">For Beginners</a>
+    <a class="nav-cta" href="index.html#follow">Follow the build →</a>
+  </nav>
+</header>
+
+<article class="article">
+  <p class="section-label">The workflow</p>
+  <h1>How to Turn 30-60 Minutes of Raw Footage Into Short Clips (Without Editing Experience)</h1>
+
+  <p>
+    If you've got a phone or camera full of long, unedited footage — a trip, a day of
+    filming, a stream recording — and no real editing background, the usual advice
+    ("just learn Premiere" or "just learn Final Cut") isn't actually helpful. Those tools
+    have a real learning curve, and most people don't have hours to spend on it before
+    they can post anything.
+  </p>
+  <p>
+    Here's the actual problem, plainly: <strong>long raw footage has dead air, boring
+    stretches, and a handful of genuinely good moments buried inside it</strong> — and
+    finding those moments by hand means watching the whole thing multiple times.
+  </p>
+
+  <h2>What actually needs to happen</h2>
+  <ol>
+    <li><strong>Remove the dead air</strong> — pauses, silence, nothing happening</li>
+    <li><strong>Find the moments actually worth keeping</strong> — the parts with real motion, real energy, real content</li>
+    <li><strong>Cut those into something short enough to post</strong> — 15-60 seconds, not 30-60 minutes</li>
+    <li><strong>Reframe it for wherever you're posting</strong> — vertical for Reels/TikTok, square for feed, landscape for YouTube</li>
+  </ol>
+  <p>
+    Doing all four of those by hand, in a traditional editor, is exactly the kind of thing
+    that makes people give up before they ever post anything.
+  </p>
+
+  <h2>Why this is a common problem, not a niche one</h2>
+  <p>
+    This isn't just a "vlogger problem." Anyone who records long-form content and wants
+    short clips out of it hits this same wall: podcasters, streamers, event videographers,
+    anyone documenting a trip. The footage exists. The willingness to manually scrub through
+    an hour of it looking for twenty good seconds usually doesn't.
+  </p>
+
+  <h2>What I'm building for this specific problem</h2>
+  <p>
+    I'm building <strong>Cutaway</strong> — a video editor built specifically around this
+    exact workflow, not general-purpose professional editing. It automatically detects dead
+    air, automatically scores footage for the most interesting moments, and turns a long
+    file into a short one with a couple of clicks — including reframing for whichever
+    platform you're posting to.
+  </p>
+  <p>
+    It's a personal project, built in public, from someone who had this exact problem and
+    didn't want to learn a professional editor to solve it.
+  </p>
+</article>
+
+<div class="filmstrip" aria-hidden="true" id="filmstrip-1"></div>
+
+<section class="footer-cta" id="follow">
+  <h2>See how it works</h2>
+  <p>Following the build, one part at a time.</p>
+  <a class="btn btn-primary" href="index.html#follow">Follow along →</a>
+</section>
+
+<footer class="site-footer">
+  ◧ Cutaway — a personal project.
+</footer>
+
+<script>
+  document.querySelectorAll('.filmstrip').forEach((strip) => {
+    for (let i = 0; i < 14; i++) {
+      const frame = document.createElement('div');
+      frame.className = 'filmstrip-frame';
+      frame.style.setProperty('--frame-opacity', (0.05 + Math.random() * 0.16).toFixed(2));
+      strip.appendChild(frame);
+    }
+  });
+</script>
+
+</body>
+</html>

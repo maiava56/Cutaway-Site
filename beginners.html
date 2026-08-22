@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Video Editor for People Who Get Lost in Final Cut Pro or Premiere — Cutaway</title>
+<meta name="description" content="Why a simpler manual editor doesn't actually fix the beginner problem — and what does.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="index.html">
+    <span class="wordmark-mark">◧</span> Cutaway
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="workflow.html">The Workflow</a>
+    <a href="beginners.html" aria-current="page">For Beginners</a>
+    <a class="nav-cta" href="index.html#follow">Follow the build →</a>
+  </nav>
+</header>
+
+<article class="article">
+  <p class="section-label">For beginners</p>
+  <h1>A Video Editor for People Who Get Lost in Final Cut Pro or Premiere</h1>
+
+  <p>
+    There's a specific kind of frustrating experience a lot of beginners have: you buy
+    Final Cut Pro or Premiere Pro because everyone says it's "the" tool, you open it, and
+    you're immediately faced with a dozen panels, timelines, inspectors, and settings you
+    don't understand — for a video you just wanted to trim and post.
+  </p>
+  <p>
+    That's not a personal failing. Those tools are genuinely built for people who already
+    know how to edit professionally. If you don't, the learning curve isn't small — it's a
+    real barrier between you and just posting your video.
+  </p>
+
+  <h2>The usual advice doesn't actually solve this</h2>
+  <p>
+    Most "beginner-friendly" alternatives (Premiere Elements, Filmora, iMovie) are still,
+    fundamentally, manual editors — you're still doing every cut, every trim, every
+    decision by hand. They're simpler, but they don't remove the actual work. You still
+    need to know <em>what</em> to do, just with fewer buttons.
+  </p>
+
+  <h2>What's actually different about a good fit here</h2>
+  <p>
+    The real fix for "I don't know how to edit and don't want to learn" isn't a simpler
+    manual editor — it's a tool that makes the editing decisions <strong>for</strong> you,
+    automatically, and just lets you review and adjust the result.
+  </p>
+  <p>That's the specific thing I'm building with <strong>Cutaway</strong>:</p>
+  <ul>
+    <li>Automatic dead-air removal — it finds and cuts the boring parts itself</li>
+    <li>Automatic highlight detection — it finds the best moments in your footage on its own</li>
+    <li>One-click templates that combine those into a finished style</li>
+    <li>Manual trim/split/cut tools too, for when you do want direct control — but you're never required to use them</li>
+  </ul>
+
+  <h2>Built by someone who had this exact problem</h2>
+  <p>
+    I'm not a professional editor. I bought Final Cut Pro, got lost in it almost
+    immediately, and decided to build something myself instead — specifically for people
+    who want their raw footage turned into something postable without first becoming a
+    video editor.
+  </p>
+  <p>
+    It's a personal project, actively being built in public, with no fixed deadline —
+    just seeing how far I can take it.
+  </p>
+</article>
+
+<div class="filmstrip" aria-hidden="true" id="filmstrip-1"></div>
+
+<section class="footer-cta" id="follow">
+  <h2>Follow the build</h2>
+  <p>New parts posted regularly, no deadline attached.</p>
+  <a class="btn btn-primary" href="index.html#follow">Follow along →</a>
+</section>
+
+<footer class="site-footer">
+  ◧ Cutaway — a personal project.
+</footer>
+
+<script>
+  document.querySelectorAll('.filmstrip').forEach((strip) => {
+    for (let i = 0; i < 14; i++) {
+      const frame = document.createElement('div');
+      frame.className = 'filmstrip-frame';
+      frame.style.setProperty('--frame-opacity', (0.05 + Math.random() * 0.16).toFixed(2));
+      strip.appendChild(frame);
+    }
+  });
+</script>
+
+</body>
+</html>

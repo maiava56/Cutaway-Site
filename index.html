@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cutaway — I got lost in Final Cut Pro, so I'm building my own editor</title>
+<meta name="description" content="A personal project: building a video editor for people who get lost in Final Cut Pro or Premiere and just want their raw footage turned into something postable.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="index.html">
+    <span class="wordmark-mark">◧</span> Cutaway
+  </a>
+  <nav class="site-nav">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="workflow.html">The Workflow</a>
+    <a href="beginners.html">For Beginners</a>
+    <a class="nav-cta" href="#follow">Follow the build →</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <p class="hero-eyebrow">A personal project</p>
+  <h1>I got lost in Final Cut Pro.<br>So I'm building <em>my own editor.</em></h1>
+  <p class="lede">
+    Not because Final Cut is bad software — it's genuinely good. But it's built for people
+    who already know how to edit. I didn't. I just had a phone full of raw footage and no
+    idea how to turn any of it into something worth posting.
+  </p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="workflow.html">See how it works</a>
+    <a class="btn" href="#follow">Follow the build</a>
+  </div>
+</section>
+
+<div class="filmstrip" aria-hidden="true" id="filmstrip-1"></div>
+
+<section class="section">
+  <p class="section-label">The problem</p>
+  <h2>This isn't Cutaway vs. Final Cut Pro.</h2>
+  <p>
+    I'm not trying to build a smaller Premiere, or a free Final Cut. That's not a fight
+    worth having — those tools have years of professional tooling behind them.
+  </p>
+  <p>
+    What I'm actually building is for a different moment: the <strong>30-60 minutes of raw
+    footage</strong> that would otherwise just sit there, unedited, forever — because opening
+    a professional editor for it feels like more work than it's worth.
+  </p>
+</section>
+
+<section class="section">
+  <p class="section-label">What it does right now</p>
+  <h2>Built to make the editing decisions for you.</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>Cuts the dead air</h3>
+      <p>Finds and removes silence and pauses automatically — no more scrubbing to find where to cut.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Finds the best moments</h3>
+      <p>Motion and audio scoring picks out what's actually worth keeping, on its own.</p>
+    </div>
+    <div class="feature-card">
+      <h3>One-click templates</h3>
+      <p>Fast-paced highlights, a chill montage, or just a clean trim — pick a style, it builds it.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Mix multiple clips</h3>
+      <p>Pull pieces from more than one video into a single timeline and export the mix.</p>
+    </div>
+  </div>
+</section>
+
+<div class="filmstrip" aria-hidden="true" id="filmstrip-2"></div>
+
+<section class="footer-cta" id="follow">
+  <h2>No launch date. No deadline.</h2>
+  <p>Just seeing how far I can take this — built in public, one part at a time.</p>
+  <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Follow along →</a>
+</section>
+
+<footer class="site-footer">
+  ◧ Cutaway — a personal project.
+</footer>
+
+<script>
+  // Gives each filmstrip frame a slightly different, fixed tint so it
+  // reads as a real filmstrip rather than a flat repeated pattern —
+  // matching the actual app timeline this element is meant to evoke.
+  document.querySelectorAll('.filmstrip').forEach((strip) => {
+    for (let i = 0; i < 14; i++) {
+      const frame = document.createElement('div');
+      frame.className = 'filmstrip-frame';
+      frame.style.setProperty('--frame-opacity', (0.05 + Math.random() * 0.16).toFixed(2));
+      strip.appendChild(frame);
+    }
+  });
+</script>
+
+</body>
+</html>

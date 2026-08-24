@@ -404,6 +404,11 @@ a {
   color: var(--text-dim);
 }
 
+.changelog-tag.removed {
+  background: rgba(214, 107, 107, 0.15);
+  color: #d66b6b;
+}
+
 /* ---- Free vs Pro tier cards ---- */
 .tier-grid {
   display: grid;

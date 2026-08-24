@@ -38,8 +38,8 @@
   <h2>Being explored right now — no promises on order or timing.</h2>
   <div class="feature-grid coming-next-grid">
     <div class="feature-card">
-      <h3>Redundancy filtering</h3>
-      <p>Highlight reel avoiding near-duplicate moments instead of picking several similar clips.</p>
+      <h3>Highlight Reel rebuild</h3>
+      <p>Paused after repeated real-world failures on long, high-res footage. Being rebuilt with a proper standalone test harness this time, not iterated on inside the live app.</p>
     </div>
     <div class="feature-card">
       <h3>Smart vertical reframing</h3>
@@ -60,6 +60,12 @@
 
 <section class="section">
   <div class="changelog">
+
+    <div class="changelog-entry">
+      <span class="changelog-tag removed">Removed</span>
+      <h3>Highlight Reel</h3>
+      <p>Pulled from the app entirely — not just hidden — after it repeatedly failed on real long-form 4K footage: exporting the full source file instead of the requested clip, on top of scan times exceeding 15 minutes. Two real fix attempts (temporal spread, then a single-pass performance rewrite) didn't resolve the core issue, and continuing to sell a Pro feature that could hand back the wrong output entirely wasn't worth the risk to trust. This is a pause for a proper rebuild — likely with a standalone test harness for debugging against real long-form footage directly, rather than iterating inside the live app — not a permanent cut. Random Sampler remains free and has proven more reliable for the same use case in real testing.</p>
+    </div>
 
     <div class="changelog-entry">
       <span class="changelog-tag site">Site</span>

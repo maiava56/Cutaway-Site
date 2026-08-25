@@ -38,10 +38,6 @@
   <h2>Being explored right now — no promises on order or timing.</h2>
   <div class="feature-grid coming-next-grid">
     <div class="feature-card">
-      <h3>Highlight Reel rebuild</h3>
-      <p>Paused after repeated real-world failures on long, high-res footage. Being rebuilt with a proper standalone test harness this time, not iterated on inside the live app.</p>
-    </div>
-    <div class="feature-card">
       <h3>Smart vertical reframing</h3>
       <p>A crop that actually follows the subject, instead of a fixed center crop.</p>
     </div>
@@ -53,6 +49,10 @@
       <h3>VidBash timeline</h3>
       <p>A visual, draggable timeline for VidBash instead of the current list-based sequence.</p>
     </div>
+    <div class="feature-card">
+      <h3>Better scoring signals</h3>
+      <p>Scene-change detection and blur/focus filtering, to make Highlight Reel's picks even more reliable.</p>
+    </div>
   </div>
 </section>
 
@@ -62,9 +62,45 @@
   <div class="changelog">
 
     <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Highlight Reel is back</h3>
+      <p>Fully rebuilt from scratch — not patched, rebuilt. Validated first with a standalone command-line test harness run directly against the exact real 33-minute 4K file that broke the original, confirming the core scoring and selection logic was sound before any of it went back into the app. Now lives in its own self-contained modal (same isolation pattern as VidBash) with its own aspect ratio, 4K, and color controls, separate from the main editor's shared export settings — the leading theory for what caused the original failures.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Highlight Reel: choose what it favors</h3>
+      <p>A "Favor" setting — Balanced, More motion, or More audio energy — changes which moments actually get ranked highest, not just how many get picked. Costs nothing extra to compute, since it just recombines the same already-scanned data differently.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag fix">Fix</span>
+      <h3>Highlight Reel: cut the redundant re-scan</h3>
+      <p>Building a reel used to silently re-run the entire expensive motion/audio/sharpness scan a second time, after already running it once for the preview. Build now reuses exactly what Scan already found.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Highlight Reel: forced reset after every build</h3>
+      <p>A confirmation dialog appears once a reel finishes exporting — acknowledging it clears the loaded clip and every setting back to default, so nothing can silently carry over into the next build.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag fix">Fix</span>
+      <h3>4K sources no longer get downgraded automatically</h3>
+      <p>Segment extraction used a flat bitrate regardless of source resolution, meaning genuinely 4K footage was quietly encoded at a bitrate meant for 1080p. Now detects the actual source resolution and bumps the bitrate accordingly — no need to touch the 4K checkbox if the source is already 4K. Benefits Cut Dead Air too, since they share the same underlying export step.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag fix">Fix</span>
+      <h3>Toolbar no longer breaks on smaller windows</h3>
+      <p>Button and toggle text was wrapping mid-word ("Snap to" / "beat") as the window got narrower. Text now stays on one line, spacing shrinks progressively as the window narrows, and at the very smallest sizes a visible scrollbar appears instead of content just silently running off the edge.</p>
+    </div>
+
+    <div class="changelog-entry">
       <span class="changelog-tag removed">Removed</span>
-      <h3>Highlight Reel</h3>
-      <p>Pulled from the app entirely — not just hidden — after it repeatedly failed on real long-form 4K footage: exporting the full source file instead of the requested clip, on top of scan times exceeding 15 minutes. Two real fix attempts (temporal spread, then a single-pass performance rewrite) didn't resolve the core issue, and continuing to sell a Pro feature that could hand back the wrong output entirely wasn't worth the risk to trust. This is a pause for a proper rebuild — likely with a standalone test harness for debugging against real long-form footage directly, rather than iterating inside the live app — not a permanent cut. Random Sampler remains free and has proven more reliable for the same use case in real testing.</p>
+      <h3>Highlight Reel (temporarily)</h3>
+      <p>Pulled from the app entirely — not just hidden — after it repeatedly failed on real long-form 4K footage: exporting the full source file instead of the requested clip, on top of scan times exceeding 15 minutes. Two real fix attempts (temporal spread, then a single-pass performance rewrite) didn't resolve the core issue, and continuing to sell a Pro feature that could hand back the wrong output entirely wasn't worth the risk to trust. It's back now — see above.</p>
     </div>
 
     <div class="changelog-entry">

@@ -38,6 +38,14 @@
   <h2>Being explored right now — no promises on order or timing.</h2>
   <div class="feature-grid coming-next-grid">
     <div class="feature-card">
+      <h3>Faster dead air removal</h3>
+      <p>Cut Dead Air is on hold — it worked well on shorter clips, but was too slow on long footage with only a few small gaps. Looking for a faster approach that doesn't compromise reliability.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Bring your own music</h3>
+      <p>Lay your own audio file under a clip, with automatic ducking so it doesn't drown out speech.</p>
+    </div>
+    <div class="feature-card">
       <h3>Smart vertical reframing</h3>
       <p>A crop that actually follows the subject, instead of a fixed center crop.</p>
     </div>
@@ -60,6 +68,36 @@
 
 <section class="section">
   <div class="changelog">
+
+    <div class="changelog-entry">
+      <span class="changelog-tag removed">Removed</span>
+      <h3>Cut Dead Air (on hold)</h3>
+      <p>Pulled from the app for now — not because it's broken, but because it wasn't fast enough to be worth charging for on one real, common case: a long file with only a few small gaps to cut. A speed fix was attempted (skipping re-encoding in favor of a much faster stream copy), but it introduced its own real bug — corrupted timestamps in the exported file that went on to break thumbnail generation — so it was reverted in favor of reliability over speed. Still finds and cuts dead air correctly on shorter clips; the plan is to bring it back once there's a faster approach that doesn't trade away correctness to get there.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Random Sampler gets its own format controls</h3>
+      <p>Aspect ratio, color filter, and 4K — the same self-contained export pipeline VidBash and Highlight Reel already use, now on Random Sampler too.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>Fade out</h3>
+      <p>Fades video and audio together over the last 1.5 seconds instead of stopping abruptly. Available on every export path — the main editor, VidBash, Highlight Reel, and Random Sampler.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag feature">Feature</span>
+      <h3>4K detection</h3>
+      <p>The "4K" upscale option now disables itself automatically when a clip is already 4K — upscaling something that's already there doesn't add anything, and re-running it through a scaling step for no reason can introduce subtle softening. Checked against the actual source resolution the moment a clip loads, everywhere 4K shows up in the app.</p>
+    </div>
+
+    <div class="changelog-entry">
+      <span class="changelog-tag fix">Fix</span>
+      <h3>A stale reference crashed every clip import</h3>
+      <p>A leftover call to state removed during the Cut Dead Air cleanup was silently throwing on every single import — which, among other things, was interrupting the new 4K detection check right when it needed to run.</p>
+    </div>
 
     <div class="changelog-entry">
       <span class="changelog-tag feature">Feature</span>
